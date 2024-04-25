@@ -1,0 +1,32 @@
+from typing import List
+
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        res = [[]]
+        
+        def dfs(i, cur, total):
+            # Base condition: Stop if the total exceeds the target
+            if total > target:
+                return
+            # If the total equals the target, add a copy of the current list to the results
+            if total == target:
+                res.append(cur.copy())
+                return
+            
+            # Recursively explore further elements
+            for j in range(i, len(candidates)):
+                cur.append(candidates[j])
+                dfs(j, cur, total + candidates[j])
+                cur.pop()
+        
+        # Initial call to dfs
+        dfs(0, [], 0)
+        
+        return res
+
+# Example usage:
+sol = Solution()
+print(sol.combinationSum([2, 3, 6, 7], 7))  # Expected: [[2, 2, 3], [7]]  
+
+
+#https://leetcode.com/problems/combination-sum/solutions/5070720/time-complexity-sum/
