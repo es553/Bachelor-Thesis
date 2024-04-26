@@ -1,7 +1,7 @@
 package leetcode_buggy_version.java_bugg;
 
 // https://leetcode.com/problems/string-to-integer-atoi/solutions/5044295/easy-java-solution/
-public class StringToInteger {
+public class StringToInteger_atoi {
   public int myAtoi(String s) {
     s = s.strip();
     if (s.isEmpty())
