@@ -1,6 +1,6 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://docs.google.com/document/d/145YsjVQP981Su34Yr9W_5173IRn83LWUtCHiOAoFlsI/edit
+// https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/5046410/easy-to-understand-java-solution-beat-100 
 public class Search_In_Rotated_Sort {
   public int search(int[] nums, int target) {
     int left = 0;
