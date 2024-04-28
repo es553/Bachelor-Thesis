@@ -1,10 +1,9 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/5046410/easy-to-understand-java-solution-beat-100 
 public class Search_In_Rotated_Sort {
   public int search(int[] nums, int target) {
     int left = 0;
-    int right = nums.length - 1;
+    int right = left;
     if (nums[0] < nums[nums.length - 1]) {
       binSerach(left, right, nums, target);
     }
@@ -45,3 +44,6 @@ public class Search_In_Rotated_Sort {
     return -1;
   }
 }
+
+// https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/5046410/easy-to-understand-java-solution-beat-100
+// Error: int right = left;

@@ -2,7 +2,6 @@ package leetcode_buggy_version.java_bugg;
 
 import java.util.Arrays;
 
-//https://leetcode.com/problems/next-permutation/solutions/5045809/easy-swap-and-reverse-finding-next-greater-number-beats-100-java 
 public class NextPermutation {
   public void nextPermutation(int[] nums) {
     int n = nums.length;
@@ -40,8 +39,11 @@ public class NextPermutation {
   }
 
   public void swap(int[] nums, int a, int b) {
-    int temp = nums[a];
+    int temp = nums[b];
     nums[a] = nums[b];
     nums[b] = temp;
   }
 }
+
+// https://leetcode.com/problems/next-permutation/solutions/5045809/easy-swap-and-reverse-finding-next-greater-number-beats-100-java
+// Error: int temp = nums[b];

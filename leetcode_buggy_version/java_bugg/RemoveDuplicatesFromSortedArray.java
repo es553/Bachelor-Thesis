@@ -1,6 +1,5 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://leetcode.com/problems/remove-duplicates-from-sorted-array/solutions/5046192/array-remove-duplicates-easy-question/
 public class RemoveDuplicatesFromSortedArray {
 
   public int removeDuplicates(int[] nums) {
@@ -8,9 +7,12 @@ public class RemoveDuplicatesFromSortedArray {
     for (int i = 1; i < nums.length; i++) {
       if (nums[i] != nums[i - 1]) {
         nums[j] = nums[i];
-        j++;
+        i++;
       }
     }
     return j;
   }
 }
+
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/solutions/5046192/array-remove-duplicates-easy-question/
+// Error: i++;

@@ -1,6 +1,5 @@
 package leetcode_buggy_version.java_bugg;
 
-//https://leetcode.com/problems/zigzag-conversion/solutions/5037707/beats-95-users-with-java-easy-solution/
 public class ZigzagConversion {
   public String convert(String s, int numRows) {
     if (numRows == 1)
@@ -11,7 +10,7 @@ public class ZigzagConversion {
     int formula = (numRows - 1) * 2;
 
     for (int i = 0; i < numRows; i++) {
-      int index = i;
+      int index = i + formula;
       while (index < n) {
         str.append(s.charAt(index));
 
@@ -29,3 +28,5 @@ public class ZigzagConversion {
     return str.toString();
   }
 }
+// https://leetcode.com/problems/zigzag-conversion/solutions/5037707/beats-95-users-with-java-easy-solution/
+// Error: int index = i + formula;

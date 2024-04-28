@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-// https://leetcode.com/problems/word-ladder/solutions/5028873/java-intuitive-bfs/
 public class Word_Ladder {
   public int ladderLength(String beginWord, String endWord, List<String> wordList) {
     HashSet<String> validWords = new HashSet<>();
@@ -44,10 +43,12 @@ public class Word_Ladder {
     if (word.length() != w.length())
       return false;
     int diff = 0;
-    for (int i = 0; i < word.length(); i++) {
+    for (int i = 0; i < word.length() - diff; i++) {
       if (word.charAt(i) != w.charAt(i))
         diff++;
     }
     return diff <= 1 ? true : false;
   }
 }
+// https://leetcode.com/problems/word-ladder/solutions/5028873/java-intuitive-bfs/
+// Error: for (int i=0; i<word.length() - diff; i++) {

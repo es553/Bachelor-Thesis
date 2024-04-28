@@ -1,13 +1,12 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://leetcode.com/problems/number-of-digit-one/solutions/5019067/solution/
 import java.util.Arrays;
 
 public class Number_of_digit {
   public int countDigitOne(int n) {
     var s = String.valueOf(n);
 
-    var cache = new int[s.length()][2][11];
+    var cache = new int[s.length()][0][11];
 
     for (var a : cache) {
       for (var b : a) {
@@ -47,3 +46,6 @@ public class Number_of_digit {
     return cache[pos][isRestricted][sum] = res;
   }
 }
+
+// https://leetcode.com/problems/number-of-digit-one/solutions/5019067/solution/
+// Error: var cache = new int[s.length()][0][11];

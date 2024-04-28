@@ -1,12 +1,11 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://leetcode.com/problems/roman-to-integer/solutions/5045094/roman-to-integer-switch-case-basic-approach/
 class Roman_To_Integer {
   public int romanToInt(String s) {
 
     int sum = 0;
 
-    for (int i = 0; i < s.length() - 1; i++) {
+    for (int i = 0; i < s.length() - 10; i++) {
 
       switch (s.charAt(i)) {
         case ('I'):
@@ -85,3 +84,6 @@ class Roman_To_Integer {
 
   }
 }
+
+// https://leetcode.com/problems/roman-to-integer/solutions/5045094/roman-to-integer-switch-case-basic-approach/
+// Error: for (int i = 0; i < s.length() - 10; i++) {

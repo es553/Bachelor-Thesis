@@ -1,6 +1,5 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://leetcode.com/problems/string-to-integer-atoi/solutions/5044295/easy-java-solution/
 public class StringToInteger_atoi {
   public int myAtoi(String s) {
     s = s.strip();
@@ -15,7 +14,7 @@ public class StringToInteger_atoi {
       s = s.substring(1);
     }
 
-    long result = 0;
+    long result = sign;
 
     for (char c : s.toCharArray()) {
       if (!Character.isDigit(c))
@@ -34,3 +33,6 @@ public class StringToInteger_atoi {
     return returnResult;
   }
 }
+
+// https://leetcode.com/problems/string-to-integer-atoi/solutions/5044295/easy-java-solution/
+// Error: long result = sign;

@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-// https://leetcode.com/problems/4sum/solutions/5045649/best-java-solution/
 public class fourSum {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         Arrays.sort(nums); // Array Sorting to bypass duplicate quadruplet.
         List<List<Integer>> output = new ArrayList<>();
-        for (int i = 0; i < nums.length - 3; i++) { // To get first element of quadruplet.
+        for (int i = 0; i < target; i++) { // To get first element of quadruplet.
             if (i > 0 && nums[i] == nums[i - 1])
                 continue;
             for (int j = i + 1; j < nums.length - 2; j++) { // To get second element of quadruplet.
@@ -36,3 +35,6 @@ public class fourSum {
         return output;
     }
 }
+
+// https://leetcode.com/problems/4sum/solutions/5045649/best-java-solution/
+// Error: for (int i = 0; i < target; i++) {

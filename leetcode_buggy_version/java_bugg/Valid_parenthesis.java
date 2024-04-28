@@ -2,12 +2,10 @@ package leetcode_buggy_version.java_bugg;
 
 import java.util.Stack;
 
-// https://leetcode.com/problems/valid-parentheses/solutions/5045416/java-optimal-solution-interview-related-questions/
-
 public class Valid_parenthesis {
   public boolean isValid(String s) {
     Stack<Character> st = new Stack<>();
-    for (int i = 0; i < s.length(); i++) {
+    for (int i = 0; i < s.length() - i; i++) {
       if (s.charAt(i) == ')') {
         if (!st.isEmpty() && st.peek() == '(') {
           st.pop();
@@ -33,3 +31,6 @@ public class Valid_parenthesis {
       return true;
   }
 }
+
+// https://leetcode.com/problems/valid-parentheses/solutions/5045416/java-optimal-solution-interview-related-questions/
+// Error: for(int i=0;i<s.length() - i;i++){

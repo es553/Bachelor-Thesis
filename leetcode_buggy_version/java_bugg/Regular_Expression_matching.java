@@ -1,6 +1,5 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://leetcode.com/problems/regular-expression-matching/solutions/5045607/java-solution/
 public class Regular_Expression_matching {
   public boolean isMatch(String s, String p) {
 
@@ -16,7 +15,7 @@ public class Regular_Expression_matching {
 
     boolean[][] dp = new boolean[rows + 1][columns + 1];
 
-    dp[0][0] = true;
+    dp[0][0] = false;
 
     for (int i = 2; i < columns + 1; i++) {
       if (p.charAt(i - 1) == '*') {
@@ -39,3 +38,6 @@ public class Regular_Expression_matching {
     return dp[rows][columns];
   }
 }
+
+// https://leetcode.com/problems/regular-expression-matching/solutions/5045607/java-solution/
+// Error: dp[0][0] = false;

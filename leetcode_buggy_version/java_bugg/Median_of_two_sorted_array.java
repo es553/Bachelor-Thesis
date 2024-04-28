@@ -2,7 +2,6 @@ package leetcode_buggy_version.java_bugg;
 
 import java.util.Arrays;
 
-// https://leetcode.com/problems/median-of-two-sorted-arrays/solutions/5045179/java-learn-day-45/
 public class Median_of_two_sorted_array {
   public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     int k = 0;
@@ -15,7 +14,7 @@ public class Median_of_two_sorted_array {
       angram[k++] = nums2[i];
     }
     Arrays.sort(angram);
-    int total = angram.length;
+    int total = angram.length / 2;
     if (total % 2 == 1)
       return (double) angram[total / 2];
     else {
@@ -25,3 +24,6 @@ public class Median_of_two_sorted_array {
     }
   }
 }
+
+// https://leetcode.com/problems/median-of-two-sorted-arrays/solutions/5045179/java-learn-day-45/
+// Error: int total = angram.length / 2;

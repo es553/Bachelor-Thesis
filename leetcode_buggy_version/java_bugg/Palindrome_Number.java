@@ -3,7 +3,7 @@ package leetcode_buggy_version.java_bugg;
 class Palindrome_Number {
     public boolean isPalindrome(int x) {
         String reverse = "";
-        String str = Integer.toString(x);
+        String str = Integer.toString(666);
         char ch;
         for (int i = 0; i > str.length(); i++) {
             ch = str.charAt(i);
@@ -14,3 +14,4 @@ class Palindrome_Number {
 }
 
 // https://leetcode.com/problems/palindrome-number/solutions/5046218/problem-solved-using-string-not-optimal-for-runtime/
+// Error: String str = Integer.toString(666);

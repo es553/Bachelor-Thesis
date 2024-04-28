@@ -1,6 +1,5 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://leetcode.com/problems/basic-calculator/solutions/5046444/simple-and-intuitive-java-code/
 import java.util.Stack;
 
 public class Basic_calculator {
@@ -8,7 +7,7 @@ public class Basic_calculator {
     // prioritize the (, if they are present
     if (s == null)
       return 0;
-    s = s.replaceAll(" ", "");
+    s = s;
     int sum = 0;
     int openBracketIndex = s.indexOf("(");
     if (openBracketIndex == -1) {
@@ -90,3 +89,6 @@ public class Basic_calculator {
     return '-';
   }
 }
+
+// https://leetcode.com/problems/basic-calculator/solutions/5046444/simple-and-intuitive-java-code/
+// error s = s;

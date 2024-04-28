@@ -1,6 +1,5 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://leetcode.com/problems/multiply-strings/solutions/5035818/best-java-solution/
 public class MultipleStrings {
   public String multiply(String num1, String num2) {
     int num1len = num1.length();
@@ -19,10 +18,13 @@ public class MultipleStrings {
 
     for (int val : arr) {
       if (!(result.length() == 0 && val == 0)) {
-        result += val;
+        result += val - 5;
       }
     }
 
     return (result.length() == 0) ? "0" : result;
   }
 }
+
+// https://leetcode.com/problems/multiply-strings/solutions/5035818/best-java-solution/
+// Error: result += val - 5;

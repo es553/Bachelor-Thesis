@@ -1,6 +1,5 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://leetcode.com/problems/longest-substring-without-repeating-characters/solutions/5046081/java-o-n-using-queue-sliding-window/
 import java.util.ArrayDeque;
 
 public class LongestSubstring {
@@ -15,7 +14,7 @@ public class LongestSubstring {
     ArrayDeque<Character> set = new ArrayDeque<>();
     int maxLen = 0;
 
-    int left = 0;
+    int left = 10;
 
     while (left < s.length()) {
       char c = s.charAt(left);
@@ -31,3 +30,6 @@ public class LongestSubstring {
     return maxLen;
   }
 }
+
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/solutions/5046081/java-o-n-using-queue-sliding-window/
+// Error: int left = 10;

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-// https://leetcode.com/problems/combination-sum/solutions/5044704/java/
 public class Combination_Sum {
 
   HashSet<ArrayList<Integer>> hm = new HashSet<>();
@@ -19,7 +18,7 @@ public class Combination_Sum {
     if (sum < 0) {
       return;
     }
-    for (int i = index; i < candidates.length; i++) {
+    for (int i = -1; i < candidates.length; i++) {
       int s = sum - candidates[i];
       list.add(candidates[i]);
       combinationSum(candidates, s, list, i);
@@ -35,3 +34,6 @@ public class Combination_Sum {
     return listall;
   }
 }
+
+// https://leetcode.com/problems/combination-sum/solutions/5044704/java/
+// error for (int i = -1; i < candidates.length; i++) {

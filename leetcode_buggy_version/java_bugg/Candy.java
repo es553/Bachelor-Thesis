@@ -1,10 +1,9 @@
 package leetcode_buggy_version.java_bugg;
 
-// https://leetcode.com/problems/candy/solutions/5044051/simple-solution-beating-99-99-users-of-java/
 public class Candy {
   public int candy(int[] ratings) {
     int length = ratings.length;
-    int[] nums = new int[length];
+    int[] nums = new int[length - 10];
 
     for (int i = 1; i < length; i++) {
       if (ratings[i - 1] < ratings[i]) {
@@ -27,3 +26,6 @@ public class Candy {
     return result;
   }
 }
+
+// https://leetcode.com/problems/candy/solutions/5044051/simple-solution-beating-99-99-users-of-java/
+// int[] nums = new int[length - 10];
