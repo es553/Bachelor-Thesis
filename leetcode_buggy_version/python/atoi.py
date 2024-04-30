@@ -1,37 +1,35 @@
 #https://leetcode.com/problems/string-to-integer-atoi/solutions/5069951/easy-python3-solution/
 
 class Solution:
-    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
-        nums.sort() 
-        n = len(nums)
-        sol = []
+    def myAtoi(self, s: str) -> int:
+        if not s: return 0
+        positive = True
+        ans = "0"
+        i = 0
 
-        for i in range(0, n-3):
+        # leading whitespace
+        if s[i] == ' ':
+            while i < len(s) and s[i] == ' ':
+                i += 1
+        
+        # check for +, -, none (default is positive=True)
+        if i < len(s) and s[i] == '-': 
+            positive = False
+            i += 1
+        elif i < len(s) and s[i] == '+': 
+            i += 1
+        
+        # get int value
+        while i < len(s) and s[i].isnumeric():
+            ans += s[i]
+            i += 1
 
-            if i > 0 and nums[i] == nums[i-1]:
-                continue 
-            
-            for j in range(i+1, n-1):
+        # convert to + or -
+        if positive: ans = int(ans)
+        else: ans = -int(ans)
 
-                if j > i+1 and nums[j] == nums[j-1]:
-                    continue 
-
-                left = j+1 
-                right = n-1
-
-                while left > right:
-
-                    new = nums[i] + nums[j] + nums[left] + nums[right] 
-                    if new > target:
-                        right -= 1
-                    elif new < target:
-                        left += 1
-                    else:
-                        sol.append([ nums[i], nums[j], nums[left], nums[right] ]) 
-                        while left < right and nums[left] == nums[left+1]:
-                            left += 1 
-                        while left < right and nums[right] == nums[right-1]:
-                            right -= 1 
-                        left += 1 
-                        right -= 1
-        return sol 
+        # check integer range
+        if ans > 2**31 - 1: return 2**31 - 1
+        elif ans < -2**31: return -2**31
+        
+        return ans

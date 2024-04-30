@@ -1,0 +1,70 @@
+
+Does this program have a bug, answer only with yes or no. 
+
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        ## Solution 1
+        # seen = set()
+        # unique_vals = []
+        # for num in nums:
+        #     if num not in unique_vals:
+        #         seen.add(num)
+        #         unique_vals.append(num)
+        
+        # nums[:len(unique_vals)] =  unique_vals
+        # return len(unique_vals)
+
+
+        ## Solution 2:
+        if len(nums) == 0:
+            return 0
+
+        curr_index = 1
+        for i in range(len(nums)):
+            if nums[i] != nums[curr_index]:
+                curr_index = curr_index +1
+                nums[curr_index] = nums[i]
+        
+        return curr_index +1
+
+Res :
+- Yes 
+
+Fix the bug and provide the complete fixed code.
+
+Absolutely! Here's a breakdown of the bug and the fixed code.
+
+**The Bug**
+
+The provided code has a subtle bug in Solution 1. Here's the issue:
+
+* **Incorrect Modification:** The line `nums[:len(unique_vals)] = unique_vals` attempts to modify the original `nums` list in-place. However, this technique might not correctly update the beginning of the list, leading to unexpected residues of old values.
+
+**Fixed Code (With Explanations)**
+
+Here's a corrected version focusing on Solution 2, as it's generally more efficient:
+
+```python
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if len(nums) == 0:
+            return 0
+
+        curr_index = 0  # Index of the next unique element
+        for i in range(1, len(nums)):  # Start from the second element
+            if nums[i] != nums[curr_index]:
+                curr_index += 1
+                nums[curr_index] = nums[i]
+
+        return curr_index + 1  # The length of the unique portion
+```
+
+**Explanation of the Fix**
+
+1. **Two-Pointer Approach:** The code uses two pointers: `curr_index` keeps track of the end of the unique portion of the array, and `i` iterates through the array.
+2. **Comparison:** If the current element (`nums[i]`) is different from the element at `curr_index`, we've found a new unique element.
+3. **Update:**  We increment `curr_index` and copy `nums[i]` to `nums[curr_index]`, effectively moving the unique element to its correct position.
+4. **Final Length:**  After the loop, `curr_index + 1` represents the length of the array with duplicates removed. 
+
+**Let me know if you'd like a fix for Solution 1 as well, or have any other coding challenges!** 
