@@ -1,0 +1,14 @@
+You
+Does this program have a bug, answer only with yes or no
+def bitcount(n):
+    count = 0
+    while n:
+        n &= n - 1
+        count += 1
+    return count
+
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT
+ChatGPT
+
+No.
