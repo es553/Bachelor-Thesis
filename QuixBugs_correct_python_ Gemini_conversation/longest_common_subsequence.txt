@@ -1,0 +1,15 @@
+"Does this program have a bug, answer only with yes or no,"
+def longest_common_subsequence(a, b):
+    if not a or not b:
+        return ''
+
+    elif a[0] == b[0]:
+        return a[0] + longest_common_subsequence(a[1:], b[1:])
+
+    else:
+        return max(
+            longest_common_subsequence(a, b[1:]),
+            longest_common_subsequence(a[1:], b),
+            key=len
+        )
+Based on the provided code and its typical function, no. The code appears to be a correct implementation of the algorithm to find the longest common subsequence between two strings. 
