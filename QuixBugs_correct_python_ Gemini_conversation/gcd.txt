@@ -1,0 +1,9 @@
+"Does this program have a bug, answer only with yes or no
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+Res;
+No
