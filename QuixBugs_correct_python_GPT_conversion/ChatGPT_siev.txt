@@ -1,0 +1,14 @@
+You
+"Does this program have a bug, answer only with yes or no
+def sieve(max):
+    primes = []
+    for n in range(2, max + 1):
+        if all(n % p > 0 for p in primes):
+            primes.append(n)
+    return primes
+
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT
+ChatGPT
+
+No.
