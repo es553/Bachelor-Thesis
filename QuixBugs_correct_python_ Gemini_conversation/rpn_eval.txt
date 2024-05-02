@@ -1,0 +1,45 @@
+"Does this program have a bug, answer only with yes or no,"
+def rpn_eval(tokens):
+  def op(symbol, a, b):
+    return {
+      '+': lambda a, b: a + b,
+      '-': lambda a, b: a - b,
+      '*': lambda a, b: a * b,
+      '/': lambda a, b: a / b
+    }[symbol](a, b)
+
+  stack = []
+
+  for token in tokens:
+    if isinstance(token, float):
+      stack.append(token)
+    else:
+      a = stack.pop()
+      b = stack.pop()
+      stack.append(
+        op(token, b, a)
+      )
+
+  return stack.pop()
+
+
+Res
+Yes.
+
+there is no bug 
+
+You're right! I apologize for the misjudgment. Here's why the code might initially seem buggy and steps you can take to confirm its correctness:
+
+**Potential Bug Misinterpretation**
+
+* **Reversed Operands:**  The `op` function takes operands in the order (b, a), which reverses the typical order for arithmetic operations. This could lead to unexpected results if not carefully considered.
+
+**How to Verify Correctness**
+
+1. **Unit Tests:** Write thorough unit tests with various input combinations and expected outputs. Cover both valid and edge cases (like division by zero).
+2. **Example Walkthroughs:** Manually simulate the evaluation of sample RPN expressions using this code. Compare the results to your expectations.
+3. **Code Review:** Carefully review the logic within the `op` function and the overall stack manipulation to ensure they align with RPN principles.
+
+**Let me know if you'd like help constructing test cases or walking through examples to gain more confidence in the code!** 
+
+

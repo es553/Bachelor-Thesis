@@ -1,0 +1,12 @@
+Does this program have a bug, answer only with yes or no
+def reverse_linked_list(node):
+    prevnode = None
+    while node:
+        nextnode = node.successor
+        node.successor = prevnode
+        prevnode = node
+        node = nextnode
+    return prevnode
+
+REs:
+No
