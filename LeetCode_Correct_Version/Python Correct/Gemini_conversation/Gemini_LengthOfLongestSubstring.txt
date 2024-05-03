@@ -1,0 +1,23 @@
+"Does this program have a bug, answer only with yes or no
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s) < 2:
+            return len(s)
+        max_length = 0
+        first, second = 0, 1
+        sub = set()
+        sub.add(s[0])
+        while first < len(s) and second < len(s):
+            ch = s[second]
+            if ch in sub:
+                while ch in sub:
+                    sub.remove(s[first])
+                    first += 1
+                continue
+            second += 1
+            sub.add(ch)
+            max_length = max(max_length, len(sub))
+        return max_length
+
+Res;
+No
