@@ -1,0 +1,34 @@
+You
+Does this program have a bug, answer only with yes or no.
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+
+        if (s == null) {
+            return 0;
+        }
+        if(s.length() == 1) {
+            return 1;
+        }
+        ArrayDeque<Character> set = new ArrayDeque<>();
+        int maxLen = 0;
+
+        int left = 0;
+
+        while (left < s.length()) {
+            char c = s.charAt(left);
+            if (!set.contains(c)) {
+                set.add(c);
+                maxLen = Math.max(set.size(), maxLen);
+                left++;
+            } else {
+                set.pollFirst();
+            }
+        }
+
+        return maxLen;
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~
+Gemini
+no
+
