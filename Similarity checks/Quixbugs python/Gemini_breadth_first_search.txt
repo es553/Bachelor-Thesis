@@ -1,6 +1,5 @@
 ﻿YOU: Does this program have a bug, answer only with yes or no. from collections import deque as Queue
 
-
 def breadth_first_search(startnode, goalnode):
   queue = Queue()
   queue.append(startnode)
@@ -21,36 +20,7 @@ def breadth_first_search(startnode, goalnode):
       nodesseen.update(node.successors)
   return False
 
-
- profile picture 
-
-Hint: the line ” while True: ” that has the bug. 
-from collections import deque as Queue
-
-
-def breadth_first_search(startnode, goalnode):
- queue = Queue()
- queue.append(startnode)
-
-
- nodesseen = set()
- nodesseen.add(startnode)
-
-
- while True:
-  node = queue.popleft()
-
-
-  if node is goalnode:
-   return True
-  else:
-   queue.extend(node for node in node.successors if node not in nodesseen)
-   nodesseen.update(node.successors)
-
-
- return False Fix the error code, and provide the complete fixed code. 
-expand_more
-Edit
+Res: No
 
 
 
@@ -80,39 +50,7 @@ def breadth_first_search(startnode, goalnode):
       queue.extend(node for node in node.successors if node not in nodesseen)
       nodesseen.update(node.successors)
   return False
-volume_up
- profile picture 
-
-Hint: the line ” while True: ” that has the bug. 
-from collections import deque as Queue
-
-
-def breadth_first_search(startnode, goalnode):
- queue = Queue()
- queue.append(startnode)
-
-
- nodesseen = set()
- nodesseen.add(startnode)
-
-
- while True:
-  node = queue.popleft()
-
-
-  if node is goalnode:
-   return True
-  else:
-   queue.extend(node for node in node.successors if node not in nodesseen)
-   nodesseen.update(node.successors)
-
-
- return False Fix the error code, and provide the complete fixed code.
-expand_more
-edit
-volume_up
-
-
+Res: No
 
 
 3rd conversation 
@@ -143,31 +81,5 @@ def breadth_first_search(startnode, goalnode):
 volume_up
  profile picture 
 
-Hint: the line ” while True: ” that has the bug. 
-from collections import deque as Queue
+Res: No
 
-
-def breadth_first_search(startnode, goalnode):
- queue = Queue()
- queue.append(startnode)
-
-
- nodesseen = set()
- nodesseen.add(startnode)
-
-
- while True:
-  node = queue.popleft()
-
-
-  if node is goalnode:
-   return True
-  else:
-   queue.extend(node for node in node.successors if node not in nodesseen)
-   nodesseen.update(node.successors)
-
-
- return False Fix the error code, and provide the complete fixed code.
-expand_more
-edit
-volume_up
